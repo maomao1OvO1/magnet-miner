@@ -17,7 +17,7 @@
    · 22 张物品图：assets/items/第 N 关物品/{可以吸,不能吸}/xxx.png（客户手绘）
    · 背景：assets/scene/背景-无磁铁.jpg —— 松鼠在洞口那张，磁铁是我们 CSS 画的，
      所以背景必须用「无磁铁」版，否则画面上会出现两个磁铁
-   · 彩蛋画板：assets/scene/画板.webp（实际是 WebP 格式，客户原件一字未动，别改名）
+   · 彩蛋画板：assets/scene/画板.png（实际是 WebP 格式，客户原件一字未动，别改名）
    ⚠️ 源码里一律写 assets/ 相对路径，方便本地预览；交付版由 build.js 把路径
       换成 base64 内嵌，产出「单文件离线版」—— 客户素材绝不能挂公网
 
@@ -255,42 +255,42 @@ window.addEventListener('load', portraitHint);
 const ART = {
   // 第 1 关：铁制品 5 张 —— 能被磁铁吸住
   lv1Iron: [
-    {name:'回形针', src:'assets/items/第一关物品/可以吸/回形针.webp'},
-    {name:'燕尾夹', src:'assets/items/第一关物品/可以吸/燕尾夹.webp'},
-    {name:'铁螺母', src:'assets/items/第一关物品/可以吸/铁螺母.webp'},
-    {name:'铁针',   src:'assets/items/第一关物品/可以吸/铁针.webp'},
-    {name:'铁钉',   src:'assets/items/第一关物品/可以吸/铁钉.webp'}
+    {name:'回形针', src:'assets/items/第一关物品/可以吸/回形针.png'},
+    {name:'燕尾夹', src:'assets/items/第一关物品/可以吸/燕尾夹.png'},
+    {name:'铁螺母', src:'assets/items/第一关物品/可以吸/铁螺母.png'},
+    {name:'铁针',   src:'assets/items/第一关物品/可以吸/铁针.png'},
+    {name:'铁钉',   src:'assets/items/第一关物品/可以吸/铁钉.png'}
   ],
   // 第 1 关：非铁 5 张 —— 吸不住
   lv1Non: [
-    {name:'积木',   src:'assets/items/第一关物品/不能吸/积木.webp'},
-    {name:'纸杯',   src:'assets/items/第一关物品/不能吸/纸杯.webp'},
-    {name:'钻石',   src:'assets/items/第一关物品/不能吸/钻石.webp'},
-    {name:'铜螺母', src:'assets/items/第一关物品/不能吸/铜螺母.webp'},
-    {name:'黄金',   src:'assets/items/第一关物品/不能吸/黄金.webp'}
+    {name:'积木',   src:'assets/items/第一关物品/不能吸/积木.png'},
+    {name:'纸杯',   src:'assets/items/第一关物品/不能吸/纸杯.png'},
+    {name:'钻石',   src:'assets/items/第一关物品/不能吸/钻石.png'},
+    {name:'铜螺母', src:'assets/items/第一关物品/不能吸/铜螺母.png'},
+    {name:'黄金',   src:'assets/items/第一关物品/不能吸/黄金.png'}
   ],
   // 第 2 关：板子下面压着回形针，整张图就是一组（板 + 物品）
   //   「可以吸」= 这块板挡不住磁力；铁板 metal:true = 挡住
   lv2Iron: [
-    {name:'塑料板', src:'assets/items/第二关物品/可以吸/塑料.webp'},
-    {name:'木板',   src:'assets/items/第二关物品/可以吸/木板.webp'},
-    {name:'泡沫板', src:'assets/items/第二关物品/可以吸/泡沐.webp'},
-    {name:'纸板',   src:'assets/items/第二关物品/可以吸/纸板.webp'},
-    {name:'铜板',   src:'assets/items/第二关物品/可以吸/铜板.webp'}
+    {name:'塑料板', src:'assets/items/第二关物品/可以吸/塑料.png'},
+    {name:'木板',   src:'assets/items/第二关物品/可以吸/木板.png'},
+    {name:'泡沫板', src:'assets/items/第二关物品/可以吸/泡沐.png'},
+    {name:'纸板',   src:'assets/items/第二关物品/可以吸/纸板.png'},
+    {name:'铜板',   src:'assets/items/第二关物品/可以吸/铜板.png'}
   ],
   lv2Non: [
-    {name:'铁板', src:'assets/items/第二关物品/不可以吸/铁板.webp', metal:true}
+    {name:'铁板', src:'assets/items/第二关物品/不可以吸/铁板.png', metal:true}
   ],
   // 第 3 关：每张图 = 一块板 + 一个物品，要「东西是铁的」且「板子挡不住」才吸得走
   lv3Iron: [
-    {name:'塑料 + 回形针', src:'assets/items/第三关物品/可以吸/塑料+回形针.webp'},
-    {name:'木板 + 铁螺母', src:'assets/items/第三关物品/可以吸/木板+铁螺母.webp'},
-    {name:'纸板 + 铁钉',   src:'assets/items/第三关物品/可以吸/纸板+铁钉.webp'}
+    {name:'塑料 + 回形针', src:'assets/items/第三关物品/可以吸/塑料+回形针.png'},
+    {name:'木板 + 铁螺母', src:'assets/items/第三关物品/可以吸/木板+铁螺母.png'},
+    {name:'纸板 + 铁钉',   src:'assets/items/第三关物品/可以吸/纸板+铁钉.png'}
   ],
   lv3Non: [
-    {name:'泡沫 + 积木',   src:'assets/items/第三关物品/不可以吸/泡沫+积木.webp'},
-    {name:'铁板 + 燕尾夹', src:'assets/items/第三关物品/不可以吸/铁+燕尾夹.webp', metal:true},
-    {name:'铁板 + 钻石',   src:'assets/items/第三关物品/不可以吸/铁+钻石.webp',  metal:true}
+    {name:'泡沫 + 积木',   src:'assets/items/第三关物品/不可以吸/泡沫+积木.png'},
+    {name:'铁板 + 燕尾夹', src:'assets/items/第三关物品/不可以吸/铁+燕尾夹.png', metal:true},
+    {name:'铁板 + 钻石',   src:'assets/items/第三关物品/不可以吸/铁+钻石.png',  metal:true}
   ]
 };
 
@@ -498,11 +498,18 @@ const LEVELS = [
    💡 桩测试（test/fail-rule.test.js）用的最小 DOM 没有 querySelector，
       所以这里只允许用 getElementById / createElement —— 改代码时别踩这个坑
    ============================================================================ */
-function makeCard(it, x, y){
+/* ⚠️ 2026-10-16 客户反馈（毛毛转述）：**第 2 关、第 3 关卡片下面的名字不要**
+   （他红圈标出来的就是这些字）—— 第 1 关保留，认铁那关孩子要看着名字认。
+   💡 不显示名字时卡片就变成正方形（CARD_W），**高度和居中偏移必须一起改**：
+      若仍按旧的 CARD_H 居中，图片会视觉偏上 14px（差的那半行名字）。 */
+function makeCard(it, x, y, showName = true){
+  const h = showName ? CARD_H : CARD_W;      // 有名字 = 208（图 180 + 一行字），没名字 = 180
   const el = document.createElement('div');
   el.className = 'card';
+  el.style.width  = CARD_W + 'px';
+  el.style.height = h + 'px';
   el.style.left = (x - CARD_W / 2) + 'px';
-  el.style.top  = (y - CARD_H / 2) + 'px';
+  el.style.top  = (y - h / 2) + 'px';
   el.dataset.cx = x;              // 磁铁要对准卡片中心
   el.dataset.cy = y;
   el.dataset.src = it.src;        // 吸走后要拿它往收集区放小图
@@ -512,10 +519,12 @@ function makeCard(it, x, y){
   pic.style.backgroundImage = `url("${it.src}")`;
   el.appendChild(pic);
 
-  const nm = document.createElement('div');
-  nm.className = 'name';
-  nm.textContent = it.name;
-  el.appendChild(nm);
+  if (showName){                              // 第 2、3 关客户明确不要名字 ⇒ 连 DOM 都不建
+    const nm = document.createElement('div');
+    nm.className = 'name';
+    nm.textContent = it.name;
+    el.appendChild(nm);
+  }
 
   el.addEventListener('click', () => onPickItem(el, it));
   return el;
@@ -531,7 +540,7 @@ function buildLevel(i){
     const col = n % cols.length, row = Math.floor(n / cols.length);
     const x = cols[col] + rand(-7, 7);      // 轻微错落，保持手绘感；位移很小，不会重叠、不影响点击
     const y = rows[row] + rand(-5, 5);
-    field.appendChild(makeCard(it, x, y));
+    field.appendChild(makeCard(it, x, y, i === 0));   // 只有第 1 关显示名字（第 2、3 关客户要求去掉）
   });
 }
 
